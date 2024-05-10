@@ -73,7 +73,10 @@
 		0FC3D2D62BE7BDBA00C74964 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				0FC3D2C22BE7BDA700C74964 /* ViewController.swift */,
+				0FC3D3502BEE108A00C74964 /* Models */,
+				0FC3D3512BEE109500C74964 /* Views */,
+				0FC3D3522BEE109B00C74964 /* Presenters */,
+				0FC3D3532BEE10A900C74964 /* CoreData */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -86,6 +89,35 @@
 				0FC3D2CF2BE7BDA800C74964 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0FC3D3502BEE108A00C74964 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0FC3D3512BEE109500C74964 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0FC3D2C22BE7BDA700C74964 /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0FC3D3522BEE109B00C74964 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		0FC3D3532BEE10A900C74964 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
