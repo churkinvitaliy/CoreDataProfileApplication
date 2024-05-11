@@ -2,7 +2,9 @@ import UIKit
 
 class UserListViewController: UIViewController {
 
-    var model = ["CellOne", "CellTwo", "CellThree"]
+    // MARK: - Properties
+    
+    var presenter: UserListPresenterProtocol?
 
     // MARK: - UI
 
@@ -41,12 +43,20 @@ class UserListViewController: UIViewController {
     // MARK: - Actions
 
     @objc
-    private func buttonTapped() { }
+    private func buttonTapped() {
+        guard let name = textField.text, !name.isEmpty else {
+            return
+        }
+        presenter?.addUser(name: name, surname: "")
+        textField.text = ""
+    }
 
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = UserListPresenter(view: self, coreDataManager: CoreDataManager())
+        presenter?.viewDidLoad()
         setupView()
         setupHierarchy()
         setupLayout()
@@ -89,14 +99,24 @@ class UserListViewController: UIViewController {
 extension UserListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        model.count
+        presenter?.numbersOfUsers ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = model[indexPath.row]
+        if let user = presenter?.user(at: indexPath.row) {
+            cell.textLabel?.text = user.name
+        }
         cell.accessoryType = .disclosureIndicator
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let presenter = presenter {
+                presenter.deleteUser(at: indexPath.row)
+            }
+        }
     }
 }
 
@@ -109,5 +129,11 @@ extension UserListViewController: UITableViewDelegate {
         let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButton
         navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
+
+extension UserListViewController: UserListViewProtocol {
+    func reloadData() {
+        tableView.reloadData()
     }
 }

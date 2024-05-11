@@ -11,8 +11,8 @@ final class CoreDataManager {
     init() {
         container = NSPersistentContainer(name: "UserModel")
         container.loadPersistentStores { description, error in
-            if error != nil {
-                print("Не возможно загрузить базу данных. Ошибка: \(String(describing: error?.localizedDescription))")
+            if let error = error {
+                print("Не возможно загрузить базу данных. Ошибка: \(error.localizedDescription)")
             }
         }
         fetchUsers()
