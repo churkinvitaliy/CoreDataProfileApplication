@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F50040B2BEF3E140024BDF3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50040A2BEF3E140024BDF3 /* CoreDataManager.swift */; };
 		0FC3D2BF2BE7BDA700C74964 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3D2BE2BE7BDA700C74964 /* AppDelegate.swift */; };
 		0FC3D2C12BE7BDA700C74964 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3D2C02BE7BDA700C74964 /* SceneDelegate.swift */; };
 		0FC3D2C32BE7BDA700C74964 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3D2C22BE7BDA700C74964 /* UserListViewController.swift */; };
@@ -14,9 +15,13 @@
 		0FC3D2CE2BE7BDA800C74964 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0FC3D2CD2BE7BDA800C74964 /* Base */; };
 		0FC3D3572BEE137B00C74964 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3D3562BEE137B00C74964 /* UserDetailsViewController.swift */; };
 		0FC3D35A2BEF2E8B00C74964 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3D3592BEF2E8B00C74964 /* UITextField+Extensions.swift */; };
+		0FF346DC2BEF4358002AFC38 /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FF346DA2BEF4358002AFC38 /* UserModel.xcdatamodeld */; };
+		0FF346E32BEF45FF002AFC38 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF346E12BEF45FF002AFC38 /* User+CoreDataClass.swift */; };
+		0FF346E42BEF45FF002AFC38 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF346E22BEF45FF002AFC38 /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F50040A2BEF3E140024BDF3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0FC3D2BB2BE7BDA700C74964 /* CoreDataProfileApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataProfileApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC3D2BE2BE7BDA700C74964 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FC3D2C02BE7BDA700C74964 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +31,9 @@
 		0FC3D2CF2BE7BDA800C74964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FC3D3562BEE137B00C74964 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		0FC3D3592BEF2E8B00C74964 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		0FF346DB2BEF4358002AFC38 /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
+		0FF346E12BEF45FF002AFC38 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0FF346E22BEF45FF002AFC38 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F5004092BEF3DF40024BDF3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0F50040A2BEF3E140024BDF3 /* CoreDataManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		0FC3D2B22BE7BDA700C74964 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +97,7 @@
 				0FC3D3502BEE108A00C74964 /* Models */,
 				0FC3D3512BEE109500C74964 /* Views */,
 				0FC3D3522BEE109B00C74964 /* Presenters */,
+				0F5004092BEF3DF40024BDF3 /* Services */,
 				0FC3D3532BEE10A900C74964 /* CoreData */,
 			);
 			path = Sources;
@@ -99,6 +116,8 @@
 		0FC3D3502BEE108A00C74964 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0FF346E12BEF45FF002AFC38 /* User+CoreDataClass.swift */,
+				0FF346E22BEF45FF002AFC38 /* User+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,6 +141,7 @@
 		0FC3D3532BEE10A900C74964 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				0FF346DA2BEF4358002AFC38 /* UserModel.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -204,10 +224,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FF346E32BEF45FF002AFC38 /* User+CoreDataClass.swift in Sources */,
+				0FF346E42BEF45FF002AFC38 /* User+CoreDataProperties.swift in Sources */,
+				0FF346DC2BEF4358002AFC38 /* UserModel.xcdatamodeld in Sources */,
 				0FC3D2C32BE7BDA700C74964 /* UserListViewController.swift in Sources */,
 				0FC3D2BF2BE7BDA700C74964 /* AppDelegate.swift in Sources */,
 				0FC3D3572BEE137B00C74964 /* UserDetailsViewController.swift in Sources */,
 				0FC3D2C12BE7BDA700C74964 /* SceneDelegate.swift in Sources */,
+				0F50040B2BEF3E140024BDF3 /* CoreDataManager.swift in Sources */,
 				0FC3D35A2BEF2E8B00C74964 /* UITextField+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +455,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0FF346DA2BEF4358002AFC38 /* UserModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0FF346DB2BEF4358002AFC38 /* UserModel.xcdatamodel */,
+			);
+			currentVersion = 0FF346DB2BEF4358002AFC38 /* UserModel.xcdatamodel */;
+			name = UserModel.xcdatamodeld;
+			path = /Users/churkinvitaly/Desktop/swift/studies_mobdevcourse/week_14_core_data/CoreDataProfileApplication/CoreDataProfileApplication/Sources/CoreData/UserModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0FC3D2B32BE7BDA700C74964 /* Project object */;
 }
