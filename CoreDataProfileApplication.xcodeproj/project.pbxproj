@@ -18,6 +18,7 @@
 		0FF346DC2BEF4358002AFC38 /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FF346DA2BEF4358002AFC38 /* UserModel.xcdatamodeld */; };
 		0FF346E32BEF45FF002AFC38 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF346E12BEF45FF002AFC38 /* User+CoreDataClass.swift */; };
 		0FF346E42BEF45FF002AFC38 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF346E22BEF45FF002AFC38 /* User+CoreDataProperties.swift */; };
+		0FF346E62BEF5F77002AFC38 /* UserPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF346E52BEF5F77002AFC38 /* UserPresentor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0FF346DB2BEF4358002AFC38 /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
 		0FF346E12BEF45FF002AFC38 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0FF346E22BEF45FF002AFC38 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0FF346E52BEF5F77002AFC38 /* UserPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresentor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		0FC3D3522BEE109B00C74964 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				0FF346E52BEF5F77002AFC38 /* UserPresentor.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				0FF346E32BEF45FF002AFC38 /* User+CoreDataClass.swift in Sources */,
 				0FF346E42BEF45FF002AFC38 /* User+CoreDataProperties.swift in Sources */,
 				0FF346DC2BEF4358002AFC38 /* UserModel.xcdatamodeld in Sources */,
+				0FF346E62BEF5F77002AFC38 /* UserPresentor.swift in Sources */,
 				0FC3D2C32BE7BDA700C74964 /* UserListViewController.swift in Sources */,
 				0FC3D2BF2BE7BDA700C74964 /* AppDelegate.swift in Sources */,
 				0FC3D3572BEE137B00C74964 /* UserDetailsViewController.swift in Sources */,
