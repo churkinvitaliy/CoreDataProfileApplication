@@ -82,6 +82,13 @@ final class UserDetailsViewController: UIViewController {
         if isEditingProfile {
             buttonEdit.setTitle("Edit", for: .normal)
         }
+
+        guard let name = textFieldName.text,
+              let surname = textFieldSurname.text else {
+            return
+        }
+        presenter?.updateUser(name: name, surname: surname)
+        presenter?.getUserInfo()
     }
 
     // MARK: - Lifecycle

@@ -55,10 +55,14 @@ class UserListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.setupUserList()
         setupView()
         setupHierarchy()
         setupLayout()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter?.setupUserList()
     }
 
     // MARK: - Setups
