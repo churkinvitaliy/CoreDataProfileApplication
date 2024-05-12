@@ -55,7 +55,6 @@ class UserListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = UserListPresenter(view: self, coreDataManager: CoreDataManager())
         presenter?.viewDidLoad()
         setupView()
         setupHierarchy()
