@@ -124,10 +124,12 @@ extension UserListViewController: UITableViewDataSource {
 extension UserListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let detailVC = UserDetailsViewController()
+        if let user = presenter?.getUser(at: indexPath.row) {
+            let detailVC = ModuleBuilder.createUserDetailViewController(user: user)
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
         let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButton
-        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
