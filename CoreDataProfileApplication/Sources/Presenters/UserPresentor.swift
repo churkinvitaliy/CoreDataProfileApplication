@@ -7,8 +7,8 @@ protocol UserListViewProtocol: AnyObject {
 
 protocol UserListPresenterProtocol: AnyObject {
     var numbersOfUsers: Int { get }
-    func user(at index: Int) -> User?
-    func viewDidLoad()
+    func getUser(at index: Int) -> User?
+    func setupUserList()
     func addUser(name: String, surname: String)
     func deleteUser(at index: Int)
 }
@@ -27,14 +27,14 @@ class UserListPresenter: UserListPresenterProtocol {
         return coreDataManager.savedEntities.count
     }
 
-    func user(at index: Int) -> User? {
+    func getUser(at index: Int) -> User? {
         guard index >= 0 && index < coreDataManager.savedEntities.count else {
             return nil
         }
         return coreDataManager.savedEntities[index]
     }
 
-    func viewDidLoad() {
+    func setupUserList() {
         coreDataManager.onChanged = { [weak self] in
             self?.view?.reloadData()
         }
@@ -46,7 +46,7 @@ class UserListPresenter: UserListPresenterProtocol {
     }
 
     func deleteUser(at index: Int) {
-        guard let user = user(at: index) else {
+        guard let user = getUser(at: index) else {
             return
         }
         coreDataManager.deleteUser(user: user)

@@ -55,7 +55,7 @@ class UserListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.viewDidLoad()
+        presenter?.setupUserList()
         setupView()
         setupHierarchy()
         setupLayout()
@@ -103,7 +103,7 @@ extension UserListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        if let user = presenter?.user(at: indexPath.row) {
+        if let user = presenter?.getUser(at: indexPath.row) {
             cell.textLabel?.text = user.name
         }
         cell.accessoryType = .disclosureIndicator
