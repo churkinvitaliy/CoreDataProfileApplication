@@ -8,4 +8,13 @@ final class ModuleBuilder {
         view.presenter = presenter
         return view
     }
+
+    static func createUserDetailViewController(user: User) -> UIViewController {
+        let view = UserDetailsViewController()
+        let coreDataManager = CoreDataManager()
+        let presenter = UserDetailPresenter(view: view, coreDataManager: coreDataManager)
+        view.presenter = presenter
+        presenter.user = user
+        return view
+    }
 }

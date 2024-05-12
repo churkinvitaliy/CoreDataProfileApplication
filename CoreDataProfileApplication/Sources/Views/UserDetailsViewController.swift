@@ -5,6 +5,7 @@ final class UserDetailsViewController: UIViewController {
     // MARK: - Properties
 
     private var isEditingProfile = false
+    var presenter: UserDetailPresenterProtocol?
 
     // MARK: - UI
 
@@ -91,6 +92,7 @@ final class UserDetailsViewController: UIViewController {
         setupHierarchy()
         setupLayout()
         updateEditingUI(isEditing: false)
+        presenter?.getUserInfo()
     }
 
     // MARK: - Setups
@@ -138,5 +140,13 @@ final class UserDetailsViewController: UIViewController {
         buttonSaved.isHidden = !isEditing
         textFieldName.isUserInteractionEnabled = isEditing
         textFieldSurname.isUserInteractionEnabled = isEditing
+    }
+}
+
+extension UserDetailsViewController: UserDetailViewProtocol {
+    func showUserInfo(user: User) {
+        label.text = "\(user.name ?? "") \(user.surname ?? "")"
+        textFieldName.text = user.name
+        textFieldSurname.text = user.surname
     }
 }
